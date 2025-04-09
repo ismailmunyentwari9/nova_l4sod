@@ -1,0 +1,34 @@
+   /* ........header styles....... */
+   
+   nav{
+        background-color: black;
+    }
+    ul{
+      display: flex;
+      gap:2.5em;
+      justify-content: end;
+      padding: 0px 3rem;
+    }
+    li{
+       color: white;
+       font-size: 2rem; 
+       list-style-type:none;
+    }
+
+    /* upper section styles...... */
+    .upper-section {
+        border: 3px solid black;
+        height: 30vh;
+        display: flex;
+    }
+    .upper-section div:nth-child(even){
+        height: 30vh;
+        width: 25%;
+        background-color: bisque;
+    }
+    .upper-section div:nth-child(odd){
+        height: 30vh;
+        width: 25%;
+        background-color: rgb(234, 137, 19);
+    }
+
