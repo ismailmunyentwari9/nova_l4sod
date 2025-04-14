@@ -3,15 +3,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Add Book</title>
+    <title>Document</title>
 </head>
 <body>
-    <form action="./addbook.php" method="POST" class="flex flex-col border w-[70%] mx-auto mt-[13%] gap-4 p-2 rounded">
-        <h1 class="font-bold text-orange-300 text-3xl">Add Book</h1>
-        <input class="border w-[95%] rounded-lg" type="text"  name="type" placeholder="Book Type" required>
-        <input class="border w-[95%] rounded-lg" type="text"  name="title" placeholder="Book Title" required>
-        <input class="border w-[95%] rounded-lg" type="text"  name="author" placeholder="Book Author" required>
-        <button class="border border-orange-500 hover:bg-orange-400 hover:text-white" type="submit">Save Book</button>
+    <form class="border w-[70%] gap-[12px] mt-[4rem] p-5 flex flex-col rounded-lg mx-auto" action="./create.php" method="POST">
+        <h1 class="text-2xl text-orange-700">Add Product</h1>
+        <input class="border" type="text" name="name" placeholder="Product Name">
+
+        <input class="border" type="text" name="price" placeholder="Product Price">
+
+        <input class="border" type="text" name="quantity" placeholder="Product Quantity">
+
+        <input class="border" type="date" name="date" placeholder="Product Date">
+        <button class="border hover:bg-orange-900 hover:text-white" type="submit">Save</button>
+
     </form>
 </body>
 </html>
