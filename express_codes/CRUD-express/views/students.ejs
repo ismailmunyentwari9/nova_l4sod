@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>School</title>
+</head>
+<body>
+    <table class="border-3 w-[90%] border-orange-500 mx-auto mt-[2rem]">
+        <tr class="border ">
+            <th class="border text-orange-500 text-xl">STUDENT_NAME</th>
+            <th class="border text-orange-500 text-xl">STUDENT_AGE</th>
+            <th class="border text-orange-500 text-xl">STUDENT_EMAIL</th>
+            <th class="border text-orange-500 text-xl">STUDENT_GRADE</th>
+            <th class="border text-orange-500 text-xl">STUDENT_PHONE</th>
+            <th class="border text-orange-500 text-xl">STUDENT_ADRESS</th>
+            <th colspan="2">Action</th>
+        </tr>
+       
+      <%results.forEach(data=>{%>
+
+        <tr class="border ">
+            <td class="border text-xl bg-orange-100"><%=data.name%></td>
+            <td class="border text-xl bg-orange-100"><%=data.age%></td>
+            <td class="border text-xl bg-orange-100"><%=data.email%></td>
+            <td class="border text-xl bg-orange-100"><%=data.grade%></td>
+            <td class="border text-xl bg-orange-100"><%=data.phone%></td>
+            <td class="border text-xl bg-orange-100"><%=data.address%></td>
+            
+            <td  class="cursor-pointer"><a  href="./update.php">Update ✏</a></td>
+
+            <td  class="cursor-pointer"><form action="/delete/<%=data.id%>"><button type="submit">DELETE 🗑</button></form></td>
+
+        </tr>
+      <%})%>
+ 
+
+
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
