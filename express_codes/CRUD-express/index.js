@@ -52,7 +52,7 @@ app.get('/students',(req,resp)=>{
         }
         else{
             resp.render('students',{results})
-            console.log(results);
+        
         }
     })
     
@@ -70,6 +70,34 @@ app.get('/delete/:delete_id',(req,resp)=>{
             }
         })
 })
+app.get('/update/:id',(req,resp)=>{
+const{id}=req.params;
+const sql=`SELECT * FROM students WHERE id=${id}`;
+db.query(sql,(err,results)=>{
+ if(err){
+ resp.send(`Internal sever error:${err}`)
+ }
+ else{
+    resp.render('edit',{results});
+ }
+})
+})
+app.post('/edit',(req,resp)=>{
+    const {id,name,age,email,grade,phone,adress}=req.body;
+    const sql=`UPDATE students SET name='${name}',age='${age}',email='${email}',grade='${grade}',phone='${phone}',address='${adress}' WHERE id=${id}`;
+
+    db.query(sql,(err)=>{
+      if(err){
+        resp.send(`Inrernal sever erro:${err}`)
+      }
+      else{
+        resp.redirect('/students');
+      }
+    })
+})
+
+
+
 
 
 

@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <table class="border border-black mt-[3rem] mx-auto">
+        <!-- table  header row -->
+        <tr class="border border-black">
+            <th class="border border-black">Name</th>
+            <th class="border border-black">Age</th>
+            <th class="border border-black">Email</th>
+            <th class="border border-black" colspan="2">Action</th>
+           
+        </tr>
+        <!-- table data row -->
+        
+        <% results.forEach(index=>{ %>
+
+
+            <tr > 
+                <td class="border"><%=index.name%></td>
+                <td class="border"><%=index.age%></td>
+                <td class="border"><%=index.email%></td> 
+         
+                <td class="border"><a href="/delete/<%=index.id%>"><button>DELETE 🗑</button></a></td>
+                <td class="border border-black"><a href="/edit/<%=index.id%>"><button>UPDATE ✏</button></a></td>
+                
+            </tr>
+       <% })%>
+    
+     
+        
+      </table>
+</body>
+</html>
